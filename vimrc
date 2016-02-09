@@ -1,33 +1,39 @@
 "{{{ The Basics
-set nocompatible
+"Don't be stupid and use SHIFT+K to find out what you're doing
+execute pathogen#infect()
 set t_Co=256
 set noanti
-set background=dark
+set nocompatible
 set noswapfile
 set encoding=utf-8
 set showcmd
 set showmode
 set number
 set history=1000
-colorscheme darkdevel 
 if has ('gui_running')
-    " Different cursors for different modes.
-    colorscheme jellybeans 
+    "Colors are Hard ok? I can't pick.
+    "colorscheme editplus 
+    "colorscheme DevC++
+    "colorscheme leo
+    "colorscheme dual
+    "colorscheme legiblelight
+    colorscheme sol
+    "colorscheme leglight2
+    "colorscheme xterm16
+    "Different cursors for different modes.
     set guicursor=a:block-Cursor
     set guicursor+=i:ver100-iCursor
     set guicursor+=a:blinkon0
     set guicursor+=i:blinkwait10
     set go-=T
-    set guifont=gohufont-14:h12
-    "set guifont=Consolas:h11
+    set guifont=Anonymous_Pro:h11:cANSI,Consolas:h11:cANSI,Courier\ New:h11:cANSI
     set lines=40 columns=120
+endif
     syntax enable
     syntax on
-endif
     hi Cursor guifg=white guibg=DarkGreen
-    hi iCursor guifg=white guibg=DarkGreen
-    hi vCursor guifg=white guibg=DarkGreen
-execute pathogen#infect()
+    hi iCursor guifg=white guibg=Darkblue
+    hi vCursor guifg=white guibg=Darkblue
 set clipboard=unnamed
 set laststatus=2
 set backspace=indent,eol,start
@@ -52,6 +58,7 @@ hi User5 guifg=#eeee40 guibg=#222222
 "{{{Convenience Mappings----------------------------------------------------------------
 " Fuck you, help key.
 noremap  <F1> :edit!<cr>
+" I edit this a lot ok?
 nmap <silent> <leader>ev :e $MYVIMRC<CR>
 nmap <silent> <leader>sv :so $MYVIMRC<CR>
 " Wildmenu completion {{{
@@ -816,7 +823,7 @@ let g:splice_wrap = "nowrap"
 
 " }}}
 "{{{ Indenting, Folding
-set tabstop=4 "numbers of spaces of tab character
+set tabstop=4       "numbers of spaces of tab character
 set shiftwidth=4	"numbers of spaces to (auto)indent
 set softtabstop=4	"counts n spaces when DELTE or BCKSPCE is used
 set expandtab		"insert spaces instead of tab chars
@@ -825,8 +832,8 @@ set nosmartindent	"intelligent indenting - DEPRECIATED by cindent
 set foldenable
 set foldmethod=marker
 set foldlevelstart=0
-nnoremap <left>  :5wincmd <<cr>
-nnoremap <right> :5wincmd ><cr>
+nnoremap <left>  :5wincmd ><cr>
+nnoremap <right> :5wincmd <<cr>
 nnoremap <up>    :5wincmd +<cr>
 nnoremap <down>  :5wincmd -<cr>
 nnoremap <Space> za
