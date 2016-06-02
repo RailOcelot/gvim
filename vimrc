@@ -22,6 +22,14 @@ if has ('gui_running')
     colorscheme solarized
     "colorscheme leglight2
     "colorscheme xterm16
+    
+    set go-=T
+    set lines=30 columns=90
+    set guifont=Anonymous_Pro:h14:cANSI,Consolas:h11:cANSI,Courier\ New:h11:cANSI
+else
+    set background=dark
+    colorscheme sol
+endif
     "Different cursors for different modes.
     hi Cursor guifg=white guibg=DarkGreen
     hi iCursor guifg=white guibg=Darkblue
@@ -30,12 +38,6 @@ if has ('gui_running')
     set guicursor+=i:ver100-iCursor
     set guicursor+=a:blinkon0
     set guicursor+=i:blinkwait10
-    set go-=T
-    set lines=30 columns=90
-    set guifont=Anonymous_Pro:h14:cANSI,Consolas:h11:cANSI,Courier\ New:h11:cANSI
-else
-    set background=dark
-endif
     syntax enable
     syntax on
 set clipboard=unnamed
