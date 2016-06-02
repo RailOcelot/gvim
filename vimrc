@@ -11,29 +11,33 @@ set showmode
 set number
 set history=1000
 if has ('gui_running')
+    set background=light
     "Colors are Hard ok? I can't pick.
     "colorscheme editplus 
     "colorscheme DevC++
     "colorscheme leo
     "colorscheme dual
     "colorscheme legiblelight
-    colorscheme sol
+    "colorscheme sol
+    colorscheme solarized
     "colorscheme leglight2
     "colorscheme xterm16
     "Different cursors for different modes.
+    hi Cursor guifg=white guibg=DarkGreen
+    hi iCursor guifg=white guibg=Darkblue
+    hi vCursor guifg=white guibg=Darkblue
     set guicursor=a:block-Cursor
     set guicursor+=i:ver100-iCursor
     set guicursor+=a:blinkon0
     set guicursor+=i:blinkwait10
     set go-=T
-    set guifont=Anonymous_Pro:h11:cANSI,Consolas:h11:cANSI,Courier\ New:h11:cANSI
-    set lines=40 columns=120
+    set lines=30 columns=90
+    set guifont=Anonymous_Pro:h14:cANSI,Consolas:h11:cANSI,Courier\ New:h11:cANSI
+else
+    set background=dark
 endif
     syntax enable
     syntax on
-    hi Cursor guifg=white guibg=DarkGreen
-    hi iCursor guifg=white guibg=Darkblue
-    hi vCursor guifg=white guibg=Darkblue
 set clipboard=unnamed
 set laststatus=2
 set backspace=indent,eol,start
@@ -59,7 +63,7 @@ hi User5 guifg=#eeee40 guibg=#222222
 " Fuck you, help key.
 noremap  <F1> :edit!<cr>
 " I edit this a lot ok?
-nmap <silent> <leader>ev :e $MYVIMRC<CR>
+nmap <silent> <leader>ev :e! $MYVIMRC<CR>
 nmap <silent> <leader>sv :so $MYVIMRC<CR>
 " Wildmenu completion {{{
 
