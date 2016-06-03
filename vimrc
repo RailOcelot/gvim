@@ -1,7 +1,7 @@
 "{{{ The Basics
 "Don't be stupid and use SHIFT+K to find out what you're doing
 execute pathogen#infect()
-set t_Co=256
+"set t_Co=256
 set noanti
 set nocompatible
 set noswapfile
@@ -22,27 +22,30 @@ if has ('gui_running')
     colorscheme solarized
     "colorscheme leglight2
     "colorscheme xterm16
-    
     set go-=T
     set lines=30 columns=90
     set guifont=Anonymous_Pro:h14:cANSI,Consolas:h11:cANSI,Courier\ New:h11:cANSI
 else
     set background=dark
-    colorscheme sol
+    colorscheme leo
+    "Crosshair to replace the mess above
+    au WinLeave * set nocursorline nocursorcolumn
+    au WinEnter * set cursorline cursorcolumn
+    set cursorline cursorcolumn
 endif
-    "Different cursors for different modes.
-    hi Cursor guifg=white guibg=DarkGreen
-    hi iCursor guifg=white guibg=Darkblue
-    hi vCursor guifg=white guibg=Darkblue
-    set guicursor=a:block-Cursor
-    set guicursor+=i:ver100-iCursor
-    set guicursor+=a:blinkon0
-    set guicursor+=i:blinkwait10
     syntax enable
     syntax on
-set clipboard=unnamed
-set laststatus=2
-set backspace=indent,eol,start
+    set clipboard=unnamed
+    set laststatus=2
+    set backspace=indent,eol,start
+    "Different cursors for different modes.
+    hi Cursor guifg=Black guibg=DarkGreen
+    hi iCursor guifg=White guibg=Black
+    hi vCursor guifg=White guibg=Blue
+    set guicursor+=a:block-Cursor
+    set guicursor+=i:ver90-iCursor
+    set guicursor+=a:blinkon0
+    set guicursor+=i:blinkwait10
 "{{{"Status line modification
 set statusline=
 set statusline +=%1*\ %n\ %*            "buffer number
