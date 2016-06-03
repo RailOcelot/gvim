@@ -28,10 +28,6 @@ if has ('gui_running')
 else
     set background=dark
     colorscheme leo
-    "Crosshair to replace the mess above
-    au WinLeave * set nocursorline nocursorcolumn
-    au WinEnter * set cursorline cursorcolumn
-    set cursorline cursorcolumn
 endif
     syntax enable
     syntax on
@@ -46,6 +42,10 @@ endif
     set guicursor+=i:ver90-iCursor
     set guicursor+=a:blinkon0
     set guicursor+=i:blinkwait10
+    "Crosshair to replace the mess above
+    au WinLeave * set nocursorline nocursorcolumn
+    au WinEnter * set cursorline cursorcolumn
+    set cursorline cursorcolumn
 "{{{"Status line modification
 set statusline=
 set statusline +=%1*\ %n\ %*            "buffer number
