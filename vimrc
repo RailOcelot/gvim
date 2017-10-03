@@ -1,7 +1,6 @@
 "{{{ The Basics
 "Don't be stupid and use SHIFT+K to find out what you're doing
 execute pathogen#infect()
-"set t_Co=256
 set noanti
 set nocompatible
 set noswapfile
@@ -9,7 +8,7 @@ set encoding=utf-8
 set showcmd
 set showmode
 set number
-set history=1000
+set history=200
 if has ('gui_running')
     set background=light
     "Colors are Hard ok? I can't pick.
@@ -20,14 +19,16 @@ if has ('gui_running')
     "colorscheme legiblelight
     "colorscheme sol
     colorscheme solarized
+    "colorscheme PaperColor 
     "colorscheme leglight2
     "colorscheme xterm16
     set go-=T
-    set lines=30 columns=90
-    set guifont=Anonymous_Pro:h14:cANSI,Consolas:h11:cANSI,Courier\ New:h11:cANSI
+    set lines=35 columns=80
+    set guifont=Consolas:h18:b:cANSI,Courier\ Prime\ Code:h15:b:cANSI,Anonymous_Pro:h15:b:cANSI,Courier\ New:h11:b:cANSI
 else
     set background=dark
-    colorscheme leo
+    set t_Co=256
+    colorscheme xterm16
 endif
     syntax enable
     syntax on
@@ -36,7 +37,7 @@ endif
     set backspace=indent,eol,start
     "Different cursors for different modes.
     hi Cursor guifg=Black guibg=DarkGreen
-    hi iCursor guifg=White guibg=Black
+    hi iCursor guifg=White guibg=Blue
     hi vCursor guifg=White guibg=Blue
     set guicursor+=a:block-Cursor
     set guicursor+=i:ver90-iCursor
@@ -66,7 +67,7 @@ hi User5 guifg=#eeee40 guibg=#222222
 "}}}
 "{{{Convenience Mappings----------------------------------------------------------------
 " Fuck you, help key.
-noremap  <F1> :edit!<cr>
+noremap  <F1> :e!<cr>
 " I edit this a lot ok?
 nmap <silent> <leader>ev :e! $MYVIMRC<CR>
 nmap <silent> <leader>sv :so $MYVIMRC<CR>
@@ -98,7 +99,7 @@ set wildignore+=lib
 "}}}"
 "{{{Inaction in Insert-------------------------------- 
 au CursorHoldI * stopinsert
-au InsertEnter * let updaterestore=&updatetime | set updatetime=10000
+au InsertEnter * let updaterestore=&updatetime | set updatetime=5000
 au InsertLeave * let &updatetime=updaterestore
 "}}}
 " Filetype-specific ------------------------------------------------------- {{{
