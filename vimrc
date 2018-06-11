@@ -24,11 +24,10 @@ if has ('gui_running')
     "colorscheme xterm16
     set go-=T
     set lines=35 columns=80
-    set guifont=Consolas:h18:b:cANSI,Courier\ Prime\ Code:h15:b:cANSI,Anonymous_Pro:h15:b:cANSI,Courier\ New:h11:b:cANSI
+    set guifont=Consolas:h18:b:cANSI,Courier\ Prime\ Code:h18:b:cANSI,Anonymous_Pro:h18:b:cANSI,Courier\ New:h18:b:cANSI
 else
-    set background=dark
     set t_Co=256
-    colorscheme xterm16
+    colorscheme ibmedit
 endif
     syntax enable
     syntax on
